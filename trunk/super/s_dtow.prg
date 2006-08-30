@@ -1,0 +1,6 @@
+FUNCTION dtow(dIndate)
+IF EMPTY(dIndate)
+  RETURN SPACE(18)
+ENDIF
+RETURN PADR(CMONTH(dInDate)+' '+LTRIM(TRANS(DAY(dInDate),"99"))+', '+TRANS(YEAR(dInDate),"9999"),18)
+
