@@ -1,0 +1,4 @@
+FUNCTION kbdesc
+KEYBOARD CHR(27)
+RETURN ''
+

@@ -1,0 +1,89 @@
+#BCC
+VERSION=BCB.01
+!ifndef CC_DIR
+CC_DIR = $(MAKE_DIR)
+!endif
+
+!ifndef HB_DIR
+HB_DIR = $(HARBOUR_DIR)
+!endif
+ 
+RECURSE= NO 
+ 
+COMPRESS = NO
+EXTERNALLIB = YES
+XFWH = NO
+FILESTOADD =  5
+WARNINGLEVEL =  0
+USERDEFINE = 
+USERINCLUDE = 
+MEDIATOR = c:\medcl\xharbour
+GUI = NO
+MT = NO
+SRC02 = obj 
+PROJECT = regional.exe $(PR) 
+OBJFILES = $(SRC02)\REGIONAL.obj $(SRC02)\AFILACT.obj $(SRC02)\ALERTIT.obj $(SRC02)\ARCHIVOS.obj $(SRC02)\AUDFARM.obj //
+ $(SRC02)\AUDIT.obj $(SRC02)\AUDPRAC.obj $(SRC02)\BANCO.obj $(SRC02)\BORRAORD.obj $(SRC02)\CARGAUT.obj //
+ $(SRC02)\COMPRO.obj $(SRC02)\CONFCHEQ.obj $(SRC02)\CONV.obj $(SRC02)\ENVIAR.obj $(SRC02)\FAX.obj //
+ $(SRC02)\FREC.obj $(SRC02)\IMPAUD.obj $(SRC02)\IMPCHEQU.obj $(SRC02)\IMPFACT.obj $(SRC02)\IMPFAX.obj //
+ $(SRC02)\IMPMESA.obj $(SRC02)\IMPREINT.obj $(SRC02)\INF01.obj $(SRC02)\INGAUD.obj $(SRC02)\I_MOUSE.obj //
+ $(SRC02)\LETRAS.obj $(SRC02)\LISDEB.obj $(SRC02)\LISTAC11.obj $(SRC02)\LISTREIN.obj $(SRC02)\MESA.obj //
+ $(SRC02)\ORDAFIL.obj $(SRC02)\PEDIDO.obj $(SRC02)\REINFAR.obj $(SRC02)\REINPRAC.obj $(SRC02)\RENDIC.obj //
+ $(SRC02)\RENDTODO.obj $(SRC02)\SET_ELI.obj $(SRC02)\SUPMENU.obj $(SRC02)\TRAER.obj $(SRC02)\UDF.obj //
+ $(SRC02)\VERAPE.obj $(SRC02)\VERORDAF.obj $(OB) 
+PRGFILES = REGIONAL.PRG AFILACT.PRG ALERTIT.PRG ARCHIVOS.PRG AUDFARM.PRG //
+ AUDIT.PRG AUDPRAC.PRG BANCO.PRG BORRAORD.PRG CARGAUT.PRG //
+ COMPRO.PRG CONFCHEQ.PRG CONV.PRG ENVIAR.PRG FAX.PRG //
+ FREC.PRG IMPAUD.PRG IMPCHEQU.PRG IMPFACT.PRG IMPFAX.PRG //
+ IMPMESA.PRG IMPREINT.PRG INF01.PRG INGAUD.PRG I_MOUSE.PRG //
+ LETRAS.PRG LISDEB.PRG LISTAC11.PRG LISTREIN.PRG MESA.PRG //
+ ORDAFIL.PRG PEDIDO.PRG REINFAR.PRG REINPRAC.PRG RENDIC.PRG //
+ RENDTODO.PRG SET_ELI.PRG SUPMENU.PRG TRAER.PRG UDF.PRG //
+ VERAPE.PRG VERORDAF.PRG $(PS) 
+OBJCFILES = $(OBC) 
+CFILES = $(CF)
+RESFILES = 
+RESDEPEN = 
+TOPMODULE = REGIONAL.PRG
+LIBFILES = optcon.lib  lang.lib vm.lib rtl.lib rdd.lib macro.lib pp.lib dbfntx.lib dbfcdx.lib dbffpt.lib common.lib gtwin.lib codepage.lib ct.lib tip.lib pcrepos.lib hsx.lib hbsix.lib  super.lib cmnnet32.lib medntx.lib
+EXTLIBFILES = super.lib cmnnet32.lib medntx.lib
+DEFFILE = 
+HARBOURFLAGS =  -m  -w0
+CFLAG1 =  -OS $(CFLAGS) -d -c -L$(HB_DIR)\lib 
+CFLAG2 =  -I$(HB_DIR)\include;$(CC_DIR)\include
+RFLAGS = 
+LFLAGS = -L$(CC_DIR)\lib\obj;$(CC_DIR)\lib;$(HB_DIR)\lib -Gn -M -m -s -Tpe -x -ap
+IFLAGS = 
+LINKER = ilink32
+ 
+ALLOBJ = c0x32.obj $(OBJFILES) $(OBJCFILES)
+ALLRES = $(RESDEPEN)
+ALLLIB = $(LIBFILES) import32.lib cw32.lib
+.autodepend
+ 
+#DEPENDS
+ 
+#COMMANDS
+.cpp.obj:
+$(CC_DIR)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $**
+ 
+.c.obj:
+$(CC_DIR)\BIN\bcc32 -I$(HB_DIR)\include $(CFLAG1) $(CFLAG2) -o$* $**
+ 
+.prg.obj:
+$(HB_DIR)\bin\harbour -D__EXPORT__ -n -go -I$(HB_DIR)\include $(HARBOURFLAGS) -I$(MEDIATOR)\include  -o$* $**
+ 
+.rc.res:
+$(CC_DIR)\BIN\brcc32 $(RFLAGS) $<
+ 
+#BUILD
+ 
+$(PROJECT): $(CFILES) $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(CC_DIR)\BIN\$(LINKER) @&&!  
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES) 
+!
