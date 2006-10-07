@@ -1,8 +1,6 @@
 +-obj\pdf.obj &
 +-obj\r_printr.obj &
-+-obj\r_printrpdf.obj &
 +-obj\r_quikr.obj &
-+-obj\r_quikrpdf.obj &
 +-obj\r_repold.obj &
 +-obj\r_report.obj &
 +-obj\r_reportpdf.obj &
