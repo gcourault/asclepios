@@ -1,12 +1,12 @@
 /*
  ----------------------------------------------------
- Regional.prg
- Menu principal del men£ de la Regional 
+ asclepios.prg
+ Menu principal del men£ de sistema auditoria
  ----------------------------------------------------
  */
 #include "inkey.ch"
 #include "supmenu.ch"
-#include "regional.ch"
+#include "asclepios.ch"
 
 
 external var2char
