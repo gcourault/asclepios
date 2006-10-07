@@ -620,10 +620,10 @@ for k = 1 to 3
   nLinea++
   pdfAtSay( "         REINTEGROS PRACTICAS ASISTENCIALES" , nArriba+nLinea*4 , nMargen , "M" )
   nLinea++
-  pdfAtSay(hb_oemtoansi(" "N§: " + alltrim(mreceta) + "     ------   Fecha: " + mfechapres , nArriba + nLinea*4 , nMargen, "M" )
+  pdfAtSay(hb_oemtoansi(" N§: " + alltrim(mreceta) + "     ------   Fecha: " + mfechapres ), nArriba + nLinea*4 , nMargen, "M" )
   nLinea++
   nLinea++
-  pdfAlSay( "PRACTICAS" , nArriba + nLinea*4 , nMargen, "M" )
+  pdfAtSay( "PRACTICAS" , nArriba + nLinea*4 , nMargen, "M" )
   nLinea++
   nLinea++
   pdfAtSay( hb_oemtoansi( "Afiliado N§ " + mAfiliado + " " + AFILIADO->BAAPEL ) , nArriba + nLinea*4 , nMargen , "M" )
@@ -636,14 +636,14 @@ for k = 1 to 3
   pdfAtSay( "                PRESTACION SEGUN COMPROBANTES AGREGADOS" , nArriba + nLinea*4 , nMargen , "M" )
   nLinea++
   nLinea++
-  gotop
+  go top
   pdfAtSay( hb_oemtoansi( "Ctad. P.Unitario  Total Descripci¢n") , nArriba + nLinea*4 , nMargen, "M" )
   while !eof()
      nLinea++
     skip 
   enddo
 
-  pdfSetFont("Courier , 0 , 10 )
+  pdfSetFont(Courier , 0 , 10 )
    
 next k
 pdfClose()
