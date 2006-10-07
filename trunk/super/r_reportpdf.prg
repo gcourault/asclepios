@@ -61,7 +61,7 @@ EXTERNAL CRUNCH
 
 
 //-------------------------------------------------------------------------
-FUNCTION REPORTER(aInFields,aInTypes,aInLens)
+FUNCTION REPORTERPDF(aInFields,aInTypes,aInLens)
 local aTagged   := {}
 local lUseQuery := .f.
 local lUseTag   := .f.
@@ -255,7 +255,7 @@ DO WHILE !lDone
     rLayout()
   CASE nSelection = 10 .and. (aValues[M_NCOLS]> 0) .AND. rLoaded()
     cPrintBox := makebox(20,0,24,79,sls_normcol())
-    rPrintRep({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,;
+    rPrintRepPDF({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,;
                aPictures},lUseQuery,lUseTag,aTagged)
     unbox(cPrintBox)
 
@@ -825,7 +825,7 @@ DO WHILE .T.
 	 cSubrTotal := "S"
     @18,53 GET cSubrTotal PICT "!"
     READ
-	 aValues[M_UNTOTAL] := if(cSubrTotal := "S" ,.t.,.f.)
+	 aValues[M_UNTOTAL] := iif(cSubrTotal == "S" ,.t.,.f.)
     Scroll(2,19,23,78,0)
   CASE nPage = 2
     @ 1,20 SAY  "[Opciones de P gina 2 "

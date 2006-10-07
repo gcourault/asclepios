@@ -7,7 +7,7 @@
 external cambhono
 
 #include "inkey.ch"
-#include "mediator.ch"
+
 * -----------------
  function audprac()
 * -----------------
@@ -97,7 +97,7 @@ else
 	return
 endif
 
-if medistable(  alltrim( conv->archivo) )
+if file( getdfp() + alltrim( conv->archivo) + ".dbf" )
         cNomenclador := alltrim( conv->archivo)
 	select 0
         if snet_use( alltrim( (CONV->ARCHIVO) ),"NOMENCLA",.F.,5,.T.,"No se puede abrir archivo nomenclador - ¨Reintenta?")
@@ -113,7 +113,7 @@ else
 endif
 
 select 0
-if snet_use( UARANC->ARCHIVO , "UARA" , .F. , 5 , .T. , "No se puede abrir archivo de Unidades arancelarias ¨Reintenta?")
+if snet_use( ALLTRIM(UARANC->ARCHIVO) , "UARA" , .F. , 5 , .T. , "No se puede abrir archivo de Unidades arancelarias ¨Reintenta?")
 	set order to tag FECH
 else
         msg("No se puede abrir archivo de unidades arancelarias",;
@@ -911,7 +911,7 @@ cArchivo := "%" + cNomenclador + "%NOMEDESC"
 smallkset( K_F2 , "EDITAPRACTICA" , "CNOMENCLADO" , 'CODI+" "+DESC',"Pr cticas", 27  , 'CODI' )
 cIngreso := makebox( 9, 20 , 16 , 60 )
 @ 10,21 say "Cantidad: " get nCantidad pict "99" valid genval( "nCantidad > 0" , "La cantidad debe ser mayor que cero" )
-@ 11,21 say "Pr ct   : " get cNomenclado pict "!999999" valid CapNomen( cNomenclado )
+@ 11,21 say "Pr ct   : " get cNomenclado pict "!!!!!!!" valid CapNomen( cNomenclado )
 @ 11,44 say "<F2> Buscar"
 read
 nPU      := CalcNomen( nomencla->codi )
@@ -999,8 +999,8 @@ function CALCNOMEN(Arg1)
    case nomencla->letr = "C"
       Local1:= gale * nomencla->hono * mcategoriz / 100 + saog * ;
          nomencla->gast * marancel / 100
-   case nomencla->letr = "D"
-      Local1:= gale * nomencla->hono * mcategoriz / 100 + gara * ;
+   case nomencla->letr = "D"   // Las practicas radiologicas multiplican por GRAD
+      Local1:= grad * nomencla->hono * mcategoriz / 100 + gara * ;
          nomencla->gast * marancel / 100
    case nomencla->letr = "E"
       Local1:= gale * nomencla->hono * mcategoriz / 100 + sagc * ;

@@ -85,19 +85,15 @@ IF MESSYN("¨Comienza la Generaci¢n de los Cheques?")
 	go top
 
 	if m->_cheques = "CONTINUO"
-                * IF P_READY()
-			do cheques with .t.      //Imprime el cheque
-			save all like mcheque to nrocheque
-                * ENDIF 
+		do cheques with .t.      //Imprime el cheque
+		save all like mcheque to nrocheque
 	else
 		do cheques	with .f.        //No imprime el cheque
 		save all like mcheque to nrocheque
 	endif
 
-        * if p_ready()
-		go top
-		do impganan
-        * endif
+	go top
+	do impganan
 
 	* --------------------------------------------------------------
 
@@ -185,13 +181,13 @@ while !EOF() .and. lastkey() != K_ESC
                         @ prow() + 1, 13 say right(letter(int(TOTAPAG)),m->long - 29) +;
 			 " con "+RIGHT(str((TOTAPAG),10,2),2) + ;
 		  " CENTAVOS" + "///////////"
-			nRenglon := nRenglon + 2
+			nRenglon := nRenglon + 3
 		other
                         @ prow() + 1, 32 say left(letter(int(TOTAPAG)),29) + "-"
                         @ prow() + 1, 13 say substr(letter(int(TOTAPAG)),30,80)+"-"
                         @ prow() + 1, 13 say right(letter(int(TOTAPAG)),m->long - 80) + ;
 			 " con " + RIGHT(str(TOTAPAG,10,2),2) + " CENTAVOS ///////////"
-			nRenglon := nRenglon + 3
+			nRenglon := nRenglon + 4
 		endcase
 	else
 		
@@ -270,7 +266,7 @@ IF !SNET_USE("FACTU01","FACTURA",.F.,5,.T.,;
   	          "No se puede acceder al archivo FACTURA - ¨Reintenta?")
 	MSG("Se ha producido un error en la red",;
 	    "Llamar a Soporte T‚cnico: ",;
-		 "T.E. 042-554785")	
+		 "T.E. 0342-4554785")	
 	RETURN
 ENDIF
 * --
@@ -345,7 +341,7 @@ IF SNET_USE("IN1PRES","PRESTADOR",.F.,5,.F.)
 	 set order TO tag PRCOD
 ELSE
 	MSG("Error en la Red - Llamar a Soporte T‚cnico:",;
-	    "T.E. 042-554785")
+	    "T.E. 0342-4554785")
 	RETURN
 ENDIF
 SELECT 1

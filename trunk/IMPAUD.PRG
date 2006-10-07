@@ -45,7 +45,7 @@ mfax := CaptFax("Impresi¢n de Planilla de Auditor¡a")
 * --
 IF MESSYN("¨Comienza la Impresi¢n")
 	SET FILTER TO FAX == mfax
-	QUIKREPORT("AUDITORIA")
+	QUIKREPORTPDF("AUDITORIA")
 ENDIF
 RETURN
 

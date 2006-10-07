@@ -7,7 +7,6 @@
 #include "inkey.ch"
 #include "supmenu.ch"
 #include "regional.ch"
-#include "mediator.ch"
 
 
 external var2char
@@ -23,15 +22,14 @@ set century on
 set date french
 set scoreboard off
 setmode(25,80)
-* request medntx
 
-* rddsetdefault("medcdx")
+
 
 request dbfcdx
-rddsetdefault( "dbfcdx" )
+rddsetdefault(  "dbfcdx" )
 
 
-set defa to .\datos 
+set defa to .\datos
 set dele on
 if snet_use("param" , "param" , .f. , 5 , .t. , "No se puede abrir archivo de par metros - ¨Reintenta?" )
 	m->_cheques := param->cheques
@@ -49,7 +47,7 @@ initsup()
 MENU INIT ;
   WINDOW DIMS 0,0,24,79 FRAME "ÚÄ¿³ÙÄÀ³ ";
   MESSAGE  MCENTER ;
-  TITLE TEXT "NETWORK - SISTEMA INTEGRADO DIBA V.1.0 "+ NOMBRE_REGIONAL  TCENTER 
+  TITLE TEXT "NETWORK - SISTEMA INTEGRADO DIBA V.1.1 - xHarbour "+ NOMBRE_REGIONAL  TCENTER 
 MENU BARPAD 3
 MENU MOUSE EXIT AT 0,2 TEXT "[þ]" COLOR "N/W"
 MENU FORCE DROP .t.
@@ -366,4 +364,5 @@ ENDDO
 MENU HIDE  menu
 
 function editar()
-return NIL
+return NIL
+
