@@ -78,8 +78,7 @@ aPictures := array(34)
 aNdxKeys := array(15)
 
 
-*if !file(cReportFile+".DBF")
-if !medistable( cReportFile )
+if !file(cReportFile+".DBF")
 	MSG("El archivo de reportes no se encuentra")
 	return ''
 elseif!used()

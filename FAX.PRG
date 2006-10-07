@@ -149,6 +149,6 @@ aPictures[8] := []
 
 
 //---and finally, a call to the print engine...
-rPrintRep({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,aPictures},.f.)
+rPrintRepPDF({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,aPictures},.f.)
 
 //---end---

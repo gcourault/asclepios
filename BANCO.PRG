@@ -704,7 +704,7 @@ endif
 
 
 select 1
-set filter to BANCO->FECHA < ctod( "01/" + str(mmes,2) + "/" + right(str(manio,4),2) )
+set filter to BANCO->FECHA < ctod( "01/" + str(mmes,2) + "/" + str(manio,4,0) )
 go top
 plswait( .t. , "Generando Saldos")
 sum BANCO->MONTO to msaldo
@@ -713,7 +713,7 @@ sum BANCO->MONTO to msaldo
 select 2
 if sadd_rec(5,.t.,"No se puede agregar registro - ¨Reintenta?")
 	replace SALDO->FECHA with ;
-	        ctod( "01/" + str(mmes,2) + "/" + right(str(manio,4),2) )
+	        ctod( "01/" + str(mmes,2) + "/" + str(manio,4,0) )
 	replace SALDO->ALAORDEN with "SALDO MES ANTERIOR"
 	replace SALDO->NUMERO   with "SALDO"
 	replace SALDO->saldo    with M->msaldo

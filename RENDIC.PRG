@@ -22,7 +22,7 @@ ELSE
 		SET order TO tag PRCOD
 	ELSE
 		MSG("Error en la Red - Llamar a Soporte T‚cnico:",;
-		    "T.E. 042-554785")
+		    "T.E. 0342-4554785")
 		RETURN
 	ENDIF
 	SELECT 1
@@ -47,7 +47,7 @@ MSG("Ha seleccionado imprimir rendici¢n de las Facturas",mensaje1,mensaje2)
 IF MESSYN("¨Comienza la Impresi¢n")
 	SET FILTER TO FPRES >= ctod(cFechadesd) .and. FPRES <= ctod(cFechahast) .and. PRESTADOR = "S"
 	GO TOP
-	quikreport( "RENDICION" )
+	quikreportpdf( "RENDICION" )
 ENDIF
 RETURN
 

@@ -17,20 +17,19 @@ FILESTOADD =  5
 WARNINGLEVEL =  0
 USERDEFINE = 
 USERINCLUDE = 
-MEDIATOR = c:\medcl\xharbour
 GUI = NO
 MT = NO
-SRC02 = obj 
-PROJECT = regional.exe $(PR) 
-OBJFILES = $(SRC02)\REGIONAL.obj $(SRC02)\AFILACT.obj $(SRC02)\ALERTIT.obj $(SRC02)\ARCHIVOS.obj $(SRC02)\AUDFARM.obj //
- $(SRC02)\AUDIT.obj $(SRC02)\AUDPRAC.obj $(SRC02)\BANCO.obj $(SRC02)\BORRAORD.obj $(SRC02)\CARGAUT.obj //
- $(SRC02)\COMPRO.obj $(SRC02)\CONFCHEQ.obj $(SRC02)\CONV.obj $(SRC02)\ENVIAR.obj $(SRC02)\FAX.obj //
- $(SRC02)\FREC.obj $(SRC02)\IMPAUD.obj $(SRC02)\IMPCHEQU.obj $(SRC02)\IMPFACT.obj $(SRC02)\IMPFAX.obj //
- $(SRC02)\IMPMESA.obj $(SRC02)\IMPREINT.obj $(SRC02)\INF01.obj $(SRC02)\INGAUD.obj $(SRC02)\I_MOUSE.obj //
- $(SRC02)\LETRAS.obj $(SRC02)\LISDEB.obj $(SRC02)\LISTAC11.obj $(SRC02)\LISTREIN.obj $(SRC02)\MESA.obj //
- $(SRC02)\ORDAFIL.obj $(SRC02)\PEDIDO.obj $(SRC02)\REINFAR.obj $(SRC02)\REINPRAC.obj $(SRC02)\RENDIC.obj //
- $(SRC02)\RENDTODO.obj $(SRC02)\SET_ELI.obj $(SRC02)\SUPMENU.obj $(SRC02)\TRAER.obj $(SRC02)\UDF.obj //
- $(SRC02)\VERAPE.obj $(SRC02)\VERORDAF.obj $(OB) 
+SRC03 = obj 
+PROJECT = reg32.exe $(PR) 
+OBJFILES = $(SRC03)\REGIONAL.obj $(SRC03)\AFILACT.obj $(SRC03)\ALERTIT.obj $(SRC03)\ARCHIVOS.obj $(SRC03)\AUDFARM.obj //
+ $(SRC03)\AUDIT.obj $(SRC03)\AUDPRAC.obj $(SRC03)\BANCO.obj $(SRC03)\BORRAORD.obj $(SRC03)\CARGAUT.obj //
+ $(SRC03)\COMPRO.obj $(SRC03)\CONFCHEQ.obj $(SRC03)\CONV.obj $(SRC03)\ENVIAR.obj $(SRC03)\FAX.obj //
+ $(SRC03)\FREC.obj $(SRC03)\IMPAUD.obj $(SRC03)\IMPCHEQU.obj $(SRC03)\IMPFACT.obj $(SRC03)\IMPFAX.obj //
+ $(SRC03)\IMPMESA.obj $(SRC03)\IMPREINT.obj $(SRC03)\INF01.obj $(SRC03)\INGAUD.obj $(SRC03)\I_MOUSE.obj //
+ $(SRC03)\LETRAS.obj $(SRC03)\LISDEB.obj $(SRC03)\LISTAC11.obj $(SRC03)\LISTREIN.obj $(SRC03)\MESA.obj //
+ $(SRC03)\ORDAFIL.obj $(SRC03)\PEDIDO.obj $(SRC03)\REINFAR.obj $(SRC03)\REINPRAC.obj $(SRC03)\RENDIC.obj //
+ $(SRC03)\RENDTODO.obj $(SRC03)\SET_ELI.obj $(SRC03)\SUPMENU.obj $(SRC03)\TRAER.obj $(SRC03)\UDF.obj //
+ $(SRC03)\VERAPE.obj $(SRC03)\VERORDAF.obj $(OB) 
 PRGFILES = REGIONAL.PRG AFILACT.PRG ALERTIT.PRG ARCHIVOS.PRG AUDFARM.PRG //
  AUDIT.PRG AUDPRAC.PRG BANCO.PRG BORRAORD.PRG CARGAUT.PRG //
  COMPRO.PRG CONFCHEQ.PRG CONV.PRG ENVIAR.PRG FAX.PRG //
@@ -45,8 +44,8 @@ CFILES = $(CF)
 RESFILES = 
 RESDEPEN = 
 TOPMODULE = REGIONAL.PRG
-LIBFILES = optcon.lib  lang.lib vm.lib rtl.lib rdd.lib macro.lib pp.lib dbfntx.lib dbfcdx.lib dbffpt.lib common.lib gtwin.lib codepage.lib ct.lib tip.lib pcrepos.lib hsx.lib hbsix.lib  super.lib cmnnet32.lib medntx.lib
-EXTLIBFILES = super.lib cmnnet32.lib medntx.lib
+LIBFILES = optcon.lib  lang.lib vm.lib rtl.lib rdd.lib macro.lib pp.lib dbfntx.lib dbfcdx.lib dbffpt.lib common.lib gtwin.lib codepage.lib ct.lib tip.lib pcrepos.lib hsx.lib hbsix.lib  super.lib
+EXTLIBFILES = super.lib
 DEFFILE = 
 HARBOURFLAGS =  -m  -w0
 CFLAG1 =  -OS $(CFLAGS) -d -c -L$(HB_DIR)\lib 
@@ -71,7 +70,7 @@ $(CC_DIR)\BIN\bcc32 $(CFLAG1) $(CFLAG2) -o$* $**
 $(CC_DIR)\BIN\bcc32 -I$(HB_DIR)\include $(CFLAG1) $(CFLAG2) -o$* $**
  
 .prg.obj:
-$(HB_DIR)\bin\harbour -D__EXPORT__ -n -go -I$(HB_DIR)\include $(HARBOURFLAGS) -I$(MEDIATOR)\include  -o$* $**
+$(HB_DIR)\bin\harbour -D__EXPORT__ -n -go -I$(HB_DIR)\include $(HARBOURFLAGS) -o$* $**
  
 .rc.res:
 $(CC_DIR)\BIN\brcc32 $(RFLAGS) $<

@@ -82,9 +82,8 @@ DO WHILE .T.
    DO CASE
    CASE nSelection = 1.01     && select a DBF
       
-      * IF Adir('*.dbf') > 0
+     IF Adir('*.dbf') > 0
     
-     IF medgetfile("*" , 0 ) > 0
          sf_pickdbf(.f.)
       ELSE
          msg("No hay DBF en este directorio")

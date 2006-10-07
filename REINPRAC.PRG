@@ -112,7 +112,7 @@ m->mtmp := makebox(0,1,22,76,sls_normcol() )
 		endif	
 		
 		select 0
-		if snet_use( (UARANC->ARCHIVO) , "UARA" , .F. , 5 , .T. , "No se puede abrir archivo de Unidades arancelarias ¨Reintenta?")
+		if snet_use( alltrim( (UARANC->ARCHIVO) ) , "UARA" , .F. , 5 , .T. , "No se puede abrir archivo de Unidades arancelarias ¨Reintenta?")
 			set order to tag FECH
 		else
 			msg("No se puede abrir archivo de unidades arancelarias",;
@@ -563,6 +563,7 @@ return mtipo
 * --------------------
 procedure impreinprac
 * --------------------
+/*
 if p_ready()
         
 	set printer on
@@ -594,6 +595,58 @@ if p_ready()
 	set printer off
         
 endif
+*/
+
+aStyle := { "Normal" , "Bold" , "Italic" , "BoldItalic" }
+aFonts := { { "Times",     .t., .t., .t., .t. },;
+            { "Helvetica", .t., .t., .t., .t. },;
+            { "Courier",   .t., .t., .t., .t. } }
+
+cOutFileName := uniqfname( "pdf" )
+pdfOpen( cOutFileName , 200 , .t. )
+pdfBookOpen()
+pdfSetFont("Times" , 0 , 14 )
+nLinea := 1
+nArriba := 6
+nMargen = 15
+for k = 1 to 3
+  
+  nMargen := 10
+  pdfAtSay( hb_oemtoansi("REGIONAL " + NOMBRE_REGIONAL + " " + DIRECC_REGIONAL) , nArriba + nLinea*4 , nMargen , "M"  ) 
+  pdfSetFont("Times" , 0 , 10 )
+  nLinea++
+  nLinea++
+  pdfAtSay( "Asistencia Sanitaria" , nArriba + nLinea*4 , nMargen, "M" )
+  nLinea++
+  pdfAtSay( "         REINTEGROS PRACTICAS ASISTENCIALES" , nArriba+nLinea*4 , nMargen , "M" )
+  nLinea++
+  pdfAtSay(hb_oemtoansi(" "N§: " + alltrim(mreceta) + "     ------   Fecha: " + mfechapres , nArriba + nLinea*4 , nMargen, "M" )
+  nLinea++
+  nLinea++
+  pdfAlSay( "PRACTICAS" , nArriba + nLinea*4 , nMargen, "M" )
+  nLinea++
+  nLinea++
+  pdfAtSay( hb_oemtoansi( "Afiliado N§ " + mAfiliado + " " + AFILIADO->BAAPEL ) , nArriba + nLinea*4 , nMargen , "M" )
+  nLinea++
+  pdfAtSay(hb_oemtoansi( "C¢digo Postal: " + AFILIADO->BACPOS ) , nArriba + nLinea*4 , nMargen , "M" )
+  nLinea++
+  pdfAtSay(hb_oemtoansi( "Motivo del Reintegro: "	+ busca("8",mmotivo,"descripci1") ) , nArriba + nLinea*4 , nMargen, "M" )
+  nLinea++
+  nLinea++
+  pdfAtSay( "                PRESTACION SEGUN COMPROBANTES AGREGADOS" , nArriba + nLinea*4 , nMargen , "M" )
+  nLinea++
+  nLinea++
+  gotop
+  pdfAtSay( hb_oemtoansi( "Ctad. P.Unitario  Total Descripci¢n") , nArriba + nLinea*4 , nMargen, "M" )
+  while !eof()
+     nLinea++
+    skip 
+  enddo
+
+  pdfSetFont("Courier , 0 , 10 )
+   
+next k
+pdfClose()
 
 return NIL
 
@@ -696,7 +749,7 @@ cArchivo := "%" + alltrim(conv->archivo) + "%NOMEDESC"
 smallkset( K_F2 , "EDICION" , "cNomenclado" , 'CODI+" "+DESC',"Pr cticas", cArchivo  , 'CODI' )
 cIngreso := makebox( 9, 20 , 16 , 60 )
 @ 10,21 say "Cantidad: " get nCantidad pict "99" valid genval( "nCantidad > 0" , "La cantidad debe ser mayor que cero" )
-@ 11,21 say "Pr ct   : " get cNomenclado pict "@9" valid CapNomen( cNomenclado )
+@ 11,21 say "Pr ct   : " get cNomenclado pict "@!" valid CapNomen( cNomenclado )
 @ 11,44 say "<F2> Buscar"
 read
 nPU      := CalcNomen( nomencla->codi )

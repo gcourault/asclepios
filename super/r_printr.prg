@@ -69,6 +69,8 @@ LOCAL nInkey,nLastKey,lAbandoned,cBox
 LOCAL lDoMajorHEad
 LOCAL lDoMinorHead
 
+
+
 aValues     := aInValues[1]
 aHeader     := aInValues[2]
 aFooter     := aInValues[3]
@@ -430,7 +432,7 @@ do while .t.
 
     rPrintCodes(.f.)
     SET PRINT OFF
-    * SET PRINTER TO (sls_prn())
+    
     SCROLL(2,1,23,78,3)
     @21,1 SAY ""
     @22,1 SAY ""
@@ -445,7 +447,7 @@ Unbox(cBox)
 @0,48 SAY "                                "
 SET PRINT OFF
 SET PRINTER TO
-SET PRINTER TO (sls_prn())
+* SET PRINTER TO (sls_prn())
 aValues:=aHeader:=aFooter:=aColumns:=aTitles:=aWidths:=aTotalYN:=aPictures:=nil
 lCatchup:=nPageNumber:=nLineNumber:=nDestination:=nStartPage:=nil
 lEjectPage:=cOutFileName:=cStHead1:=cStHead2:=nil
@@ -550,7 +552,7 @@ else
    SET CONSOLE OFF
    SET PRINT ON
    if nDestination = 1                          // printer
-     if p_ready(sls_prn(),nil,.f.) .and. !lAbortPrint
+     if  !lAbortPrint
        ?space(aValues[M_LEFTM])+cPrintLine
      else
        lAbortPrint := .t.
