@@ -126,6 +126,6 @@ aPictures[4] := [9999999.99]
 
 
 //---and finally, a call to the print engine...
-rPrintRep({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,aPictures},.f.)
+rPrintReppdf({aValues,aHeader,aFooter,aColumns,aTitles,aWidths,aTotalYN,aPictures},.f.)
 
 //---end---

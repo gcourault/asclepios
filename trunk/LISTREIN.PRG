@@ -2,7 +2,7 @@
 * ListRein.prg
 * Permite listar los afiliados por actividad
 * -------------------------------------------
-#include "regional.ch"
+#include "asclepios.ch"
 #include "inkey.ch"
 
 function listrein()

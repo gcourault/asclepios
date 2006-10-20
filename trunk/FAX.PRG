@@ -3,7 +3,7 @@
 // call with DO FAX.PRG                                             
 
 //---- here we write the declares 
-#include "regional.ch"
+#include "asclepios.ch"
 #DEFINE M_DBF           1      // dbf name                                      
 #DEFINE M_TITLE         2      // report title (name)                           
 #DEFINE M_NDXKEY        3      // index key                                     
