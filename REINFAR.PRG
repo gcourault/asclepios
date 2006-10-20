@@ -7,7 +7,7 @@
 function reinfar()
 #include "inkey.ch"
 #define MAXREM 5
-#include "regional.ch"
+#include "asclepios.ch"
 local mtmp
 initsup()
 set delete on

@@ -6,7 +6,7 @@
 
 # include "inkey.ch"
 # define MAXRENG 10
-# include "regional.ch"
+# include "asclepios.ch"
 * ------------------------------------------------------------------------
   function ingsaldo
 * ------------------------------------------------------------------------
@@ -762,6 +762,6 @@ SELECT 2
 
 save screen
 cls()
-quikreport( "LIBRO BANCOS" )
+quikreportpdf( "LIBRO BANCOS" )
 restore screen
 return

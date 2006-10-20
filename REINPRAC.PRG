@@ -7,7 +7,7 @@
 
 
 #include "inkey.ch"
-#include "regional.ch"
+#include "asclepios.ch"
 
 * --------------------
  function reinprac()

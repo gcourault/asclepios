@@ -3,7 +3,7 @@
 * Informe 01: Genera Base de datos para ver los consumos en salud
 * de las distintas poblaciones
 * -------------------------------------------------------------------
-#include "regional.ch"
+#include "asclepios.ch"
 #include "inkey.ch"
 function inf01()
 
