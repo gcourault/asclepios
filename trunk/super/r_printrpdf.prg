@@ -570,7 +570,7 @@ else
    if nDestination = 1                          // printer
      if  !lAbortPrint
        * ?space(aValues[M_LEFTM])+cPrintLine
-        pdfAtSay( space( aValues[ M_LEFTM] ) + hb_oemtoansi( cPrintLine ), nLineNumber*4 , 3 , "M" )
+        pdfAtSay( space( aValues[ M_LEFTM] + 2 ) + hb_oemtoansi( cPrintLine ), nLineNumber*4 , 3 , "M" )
      else
        lAbortPrint := .t.
      endif
