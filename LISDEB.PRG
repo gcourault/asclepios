@@ -415,7 +415,7 @@ procedure PROCLPRAC
    nfacturado:= factura->totfactu
    margin:= 0
    header0:= ;
-      "Asclepios - " + "NOMBRE_REGIONAL
+      "Asclepios - " + NOMBRE_REGIONAL
    header1:= "VERSION 1.2"
    header2:= "LISTADO DE DEBITOS PRESTADOR: " + prestador->prnomb + ;
       " FACTURA: " + factura->factura
