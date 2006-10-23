@@ -213,7 +213,7 @@ procedure PROCLFAR
    max_lines:= 66
    margin:= 0
    header0:= ;
-      "NETWORK ING. ASOCIADOS - SISTEMA INTEGRADO REGIONAL DIBA"
+      "Asclepios - " + NOMBRE_REGIONAL
    header1:= "VERSION 1.0 á"
    header2:= "LISTADO DE DEBITOS PRESTADOR: " + prestador->prnomb + ;
       " FACTURA: " + mfactura
@@ -415,8 +415,8 @@ procedure PROCLPRAC
    nfacturado:= factura->totfactu
    margin:= 0
    header0:= ;
-      "NETWORK ING. ASOCIADOS - SISTEMA INTEGRADO REGIONAL DIBA"
-   header1:= "VERSION 1.0 á DE PRUEBA"
+      "Asclepios - " + "NOMBRE_REGIONAL
+   header1:= "VERSION 1.2"
    header2:= "LISTADO DE DEBITOS PRESTADOR: " + prestador->prnomb + ;
       " FACTURA: " + factura->factura
    header3:= Replicate("Í", 130)
