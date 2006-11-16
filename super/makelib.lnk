@@ -1,6 +1,8 @@
 +-obj\pdf.obj &
 +-obj\r_printr.obj &
++-obj\r_printrpdf.obj &
 +-obj\r_quikr.obj &
++-obj\r_quikrpdf.obj &
 +-obj\r_repold.obj &
 +-obj\r_report.obj &
 +-obj\r_reportpdf.obj &
@@ -80,6 +82,7 @@
 +-obj\s_fm2n.obj &
 +-obj\s_fm2p.obj &
 +-obj\s_forml.obj &
++-obj\s_formlpdf.obj &
 +-obj\s_freadl.obj &
 +-obj\s_freq.obj &
 +-obj\s_fulld.obj &
