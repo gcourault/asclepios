@@ -283,7 +283,7 @@ DO WHILE .T.
       bLocater    := sls_bquery()
     CASE nFilterType = 3
       cShowFilter := "REGISTROS MARCADOS  "
-      IF messyn("Tag records now?")
+      IF messyn("¨Marca los registros?")
         aTagged := {}
         tagit(aTagged,aFields,aFdesc)
       ENDIF
