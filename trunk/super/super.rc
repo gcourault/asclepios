@@ -18,18 +18,18 @@ OBJFILES = $(OBJ)\pdf.obj $(OBJ)\r_printr.obj $(OBJ)\r_printrpdf.obj $(OBJ)\r_qu
  $(OBJ)\s_copyf.obj $(OBJ)\s_crunch.obj $(OBJ)\s_ctrlw.obj $(OBJ)\s_cvtdel.obj $(OBJ)\s_datcal.obj $(OBJ)\s_datek.obj $(OBJ)\s_datvw.obj $(OBJ)\s_daysin.obj $(OBJ)\s_dbarr.obj $(OBJ)\s_dbstat.obj //
  $(OBJ)\s_delar.obj $(OBJ)\s_delet.obj $(OBJ)\s_doyear.obj $(OBJ)\s_dpops.obj $(OBJ)\s_dtdiff.obj $(OBJ)\s_dtow.obj $(OBJ)\s_dup.obj $(OBJ)\s_duph.obj $(OBJ)\s_edit.obj $(OBJ)\s_editm.obj //
  $(OBJ)\s_editmv.obj $(OBJ)\s_edpict.obj $(OBJ)\s_endsw.obj $(OBJ)\s_enhan.obj $(OBJ)\s_evalq.obj $(OBJ)\s_export.obj $(OBJ)\s_fform.obj $(OBJ)\s_fields.obj $(OBJ)\s_filein.obj $(OBJ)\s_filer.obj //
- $(OBJ)\s_fillar.obj $(OBJ)\s_fm2n.obj $(OBJ)\s_fm2p.obj $(OBJ)\s_forml.obj $(OBJ)\s_formlpdf.obj $(OBJ)\s_freadl.obj $(OBJ)\s_freq.obj $(OBJ)\s_fulld.obj $(OBJ)\s_gened.obj $(OBJ)\s_genva.obj //
- $(OBJ)\s_getcal.obj $(OBJ)\s_getdat.obj $(OBJ)\s_getdfp.obj $(OBJ)\s_getkey.obj $(OBJ)\s_getman.obj $(OBJ)\s_globr.obj $(OBJ)\s_hardc.obj $(OBJ)\s_help.obj $(OBJ)\s_helpm.obj $(OBJ)\s_hplas.obj //
- $(OBJ)\s_init.obj $(OBJ)\s_inlook.obj $(OBJ)\s_isload.obj $(OBJ)\s_ispart.obj $(OBJ)\s_isvalf.obj $(OBJ)\s_kbdesc.obj $(OBJ)\s_list.obj $(OBJ)\s_ljust.obj $(OBJ)\s_lotmen.obj $(OBJ)\s_mailm.obj //
- $(OBJ)\s_makeb.obj $(OBJ)\s_mchoi.obj $(OBJ)\s_meas.obj $(OBJ)\s_menuv.obj $(OBJ)\s_messyn.obj $(OBJ)\s_mfld.obj $(OBJ)\s_mfldt.obj $(OBJ)\s_modify.obj $(OBJ)\s_moose.obj $(OBJ)\s_msg.obj //
- $(OBJ)\s_mulmyn.obj $(OBJ)\s_nbr2st.obj $(OBJ)\s_nkey.obj $(OBJ)\s_notdup.obj $(OBJ)\s_nozdiv.obj $(OBJ)\s_oner.obj $(OBJ)\s_openin.obj $(OBJ)\s_pcsel.obj $(OBJ)\s_picknd.obj $(OBJ)\s_plsw.obj //
- $(OBJ)\s_popdir.obj $(OBJ)\s_popex.obj $(OBJ)\s_popord.obj $(OBJ)\s_popr.obj $(OBJ)\s_popupk.obj $(OBJ)\s_popvw.obj $(OBJ)\s_pread.obj $(OBJ)\s_prnpor.obj $(OBJ)\s_prnt.obj $(OBJ)\s_prntf.obj //
- $(OBJ)\s_prog.obj $(OBJ)\s_proper.obj $(OBJ)\s_pseek.obj $(OBJ)\s_pulldn.obj $(OBJ)\s_purgem.obj $(OBJ)\s_query.obj $(OBJ)\s_readrs.obj $(OBJ)\s_rjust.obj $(OBJ)\s_rmenu2.obj $(OBJ)\s_rread.obj //
- $(OBJ)\s_saddr.obj $(OBJ)\s_scmod.obj $(OBJ)\s_screen.obj $(OBJ)\s_scroll.obj $(OBJ)\s_search.obj $(OBJ)\s_setcen.obj $(OBJ)\s_setcol.obj $(OBJ)\s_setdat.obj $(OBJ)\s_setex.obj $(OBJ)\s_setkey.obj //
- $(OBJ)\s_sfilok.obj $(OBJ)\s_smal.obj $(OBJ)\s_smalk.obj $(OBJ)\s_smgets.obj $(OBJ)\s_snetu.obj $(OBJ)\s_sreclo.obj $(OBJ)\s_stan.obj $(OBJ)\s_starts.obj $(OBJ)\s_stod.obj $(OBJ)\s_stretc.obj //
- $(OBJ)\s_strpat.obj $(OBJ)\s_strpul.obj $(OBJ)\s_subplu.obj $(OBJ)\s_sumav.obj $(OBJ)\s_super.obj $(OBJ)\s_tabmen.obj $(OBJ)\s_tag.obj $(OBJ)\s_taga.obj $(OBJ)\s_tagam.obj $(OBJ)\s_tagf.obj //
- $(OBJ)\s_takeout.obj $(OBJ)\s_time.obj $(OBJ)\s_todo.obj $(OBJ)\s_trueva.obj $(OBJ)\s_unbox.obj $(OBJ)\s_uniqf.obj $(OBJ)\s_unsel.obj $(OBJ)\s_var2.obj $(OBJ)\s_varlen.obj $(OBJ)\s_viewp.obj //
- $(OBJ)\s_vmemo.obj $(OBJ)\s_vview.obj $(OBJ)\s_wild.obj $(OBJ)\s_womon.obj $(OBJ)\s_woyear.obj $(OBJ)\s_writef.obj $(OBJ)\s_xbxx.obj $(OB) 
+ $(OBJ)\s_fillar.obj $(OBJ)\s_fm2n.obj $(OBJ)\s_fm2p.obj $(OBJ)\s_forml.obj $(OBJ)\s_freadl.obj $(OBJ)\s_freq.obj $(OBJ)\s_fulld.obj $(OBJ)\s_gened.obj $(OBJ)\s_genva.obj $(OBJ)\s_getcal.obj //
+ $(OBJ)\s_getdat.obj $(OBJ)\s_getdfp.obj $(OBJ)\s_getkey.obj $(OBJ)\s_getman.obj $(OBJ)\s_globr.obj $(OBJ)\s_hardc.obj $(OBJ)\s_help.obj $(OBJ)\s_helpm.obj $(OBJ)\s_hplas.obj $(OBJ)\s_init.obj //
+ $(OBJ)\s_inlook.obj $(OBJ)\s_isload.obj $(OBJ)\s_ispart.obj $(OBJ)\s_isvalf.obj $(OBJ)\s_kbdesc.obj $(OBJ)\s_list.obj $(OBJ)\s_ljust.obj $(OBJ)\s_lotmen.obj $(OBJ)\s_mailm.obj $(OBJ)\s_makeb.obj //
+ $(OBJ)\s_mchoi.obj $(OBJ)\s_meas.obj $(OBJ)\s_menuv.obj $(OBJ)\s_messyn.obj $(OBJ)\s_mfld.obj $(OBJ)\s_mfldt.obj $(OBJ)\s_modify.obj $(OBJ)\s_moose.obj $(OBJ)\s_msg.obj $(OBJ)\s_mulmyn.obj //
+ $(OBJ)\s_nbr2st.obj $(OBJ)\s_nkey.obj $(OBJ)\s_notdup.obj $(OBJ)\s_nozdiv.obj $(OBJ)\s_oner.obj $(OBJ)\s_openin.obj $(OBJ)\s_pcsel.obj $(OBJ)\s_picknd.obj $(OBJ)\s_plsw.obj $(OBJ)\s_popdir.obj //
+ $(OBJ)\s_popex.obj $(OBJ)\s_popord.obj $(OBJ)\s_popr.obj $(OBJ)\s_popupk.obj $(OBJ)\s_popvw.obj $(OBJ)\s_pread.obj $(OBJ)\s_prnpor.obj $(OBJ)\s_prnt.obj $(OBJ)\s_prntf.obj $(OBJ)\s_prog.obj //
+ $(OBJ)\s_proper.obj $(OBJ)\s_pseek.obj $(OBJ)\s_pulldn.obj $(OBJ)\s_purgem.obj $(OBJ)\s_query.obj $(OBJ)\s_readrs.obj $(OBJ)\s_rjust.obj $(OBJ)\s_rmenu2.obj $(OBJ)\s_rread.obj $(OBJ)\s_saddr.obj //
+ $(OBJ)\s_scmod.obj $(OBJ)\s_screen.obj $(OBJ)\s_scroll.obj $(OBJ)\s_search.obj $(OBJ)\s_setcen.obj $(OBJ)\s_setcol.obj $(OBJ)\s_setdat.obj $(OBJ)\s_setex.obj $(OBJ)\s_setkey.obj $(OBJ)\s_sfilok.obj //
+ $(OBJ)\s_smal.obj $(OBJ)\s_smalk.obj $(OBJ)\s_smgets.obj $(OBJ)\s_snetu.obj $(OBJ)\s_sreclo.obj $(OBJ)\s_stan.obj $(OBJ)\s_starts.obj $(OBJ)\s_stod.obj $(OBJ)\s_stretc.obj $(OBJ)\s_strpat.obj //
+ $(OBJ)\s_strpul.obj $(OBJ)\s_subplu.obj $(OBJ)\s_sumav.obj $(OBJ)\s_super.obj $(OBJ)\s_tabmen.obj $(OBJ)\s_tag.obj $(OBJ)\s_taga.obj $(OBJ)\s_tagam.obj $(OBJ)\s_tagf.obj $(OBJ)\s_takeout.obj //
+ $(OBJ)\s_time.obj $(OBJ)\s_todo.obj $(OBJ)\s_trueva.obj $(OBJ)\s_unbox.obj $(OBJ)\s_uniqf.obj $(OBJ)\s_unsel.obj $(OBJ)\s_var2.obj $(OBJ)\s_varlen.obj $(OBJ)\s_viewp.obj $(OBJ)\s_vmemo.obj //
+ $(OBJ)\s_vview.obj $(OBJ)\s_wild.obj $(OBJ)\s_womon.obj $(OBJ)\s_woyear.obj $(OBJ)\s_writef.obj $(OBJ)\s_xbxx.obj $(OB) 
 PRGFILES = pdf.prg r_printr.prg r_printrpdf.prg r_quikr.prg r_quikrpdf.prg r_repold.prg r_report.prg r_reportpdf.prg s_1label.prg s_2dbrz.prg //
  s_aaskip.prg s_abort.prg s_achoi.prg s_addsp.prg s_aextra.prg s_aftype.prg s_akount.prg s_aleng.prg s_allbut.prg s_amsg.prg //
  s_amsort.prg s_amstat.prg s_append.prg s_appt.prg s_arrang.prg s_ascii.prg s_astats.prg s_at2c.prg s_att.prg s_attrib.prg //
@@ -38,18 +38,18 @@ PRGFILES = pdf.prg r_printr.prg r_printrpdf.prg r_quikr.prg r_quikrpdf.prg r_rep
  s_copyf.prg s_crunch.prg s_ctrlw.prg s_cvtdel.prg s_datcal.prg s_datek.prg s_datvw.prg s_daysin.prg s_dbarr.prg s_dbstat.prg //
  s_delar.prg s_delet.prg s_doyear.prg s_dpops.prg s_dtdiff.prg s_dtow.prg s_dup.prg s_duph.prg s_edit.prg s_editm.prg //
  s_editmv.prg s_edpict.prg s_endsw.prg s_enhan.prg s_evalq.prg s_export.prg s_fform.prg s_fields.prg s_filein.prg s_filer.prg //
- s_fillar.prg s_fm2n.prg s_fm2p.prg s_forml.prg s_formlpdf.prg s_freadl.prg s_freq.prg s_fulld.prg s_gened.prg s_genva.prg //
- s_getcal.prg s_getdat.prg s_getdfp.prg s_getkey.prg s_getman.prg s_globr.prg s_hardc.prg s_help.prg s_helpm.prg s_hplas.prg //
- s_init.prg s_inlook.prg s_isload.prg s_ispart.prg s_isvalf.prg s_kbdesc.prg s_list.prg s_ljust.prg s_lotmen.prg s_mailm.prg //
- s_makeb.prg s_mchoi.prg s_meas.prg s_menuv.prg s_messyn.prg s_mfld.prg s_mfldt.prg s_modify.prg s_moose.prg s_msg.prg //
- s_mulmyn.prg s_nbr2st.prg s_nkey.prg s_notdup.prg s_nozdiv.prg s_oner.prg s_openin.prg s_pcsel.prg s_picknd.prg s_plsw.prg //
- s_popdir.prg s_popex.prg s_popord.prg s_popr.prg s_popupk.prg s_popvw.prg s_pread.prg s_prnpor.prg s_prnt.prg s_prntf.prg //
- s_prog.prg s_proper.prg s_pseek.prg s_pulldn.prg s_purgem.prg s_query.prg s_readrs.prg s_rjust.prg s_rmenu2.prg s_rread.prg //
- s_saddr.prg s_scmod.prg s_screen.prg s_scroll.prg s_search.prg s_setcen.prg s_setcol.prg s_setdat.prg s_setex.prg s_setkey.prg //
- s_sfilok.prg s_smal.prg s_smalk.prg s_smgets.prg s_snetu.prg s_sreclo.prg s_stan.prg s_starts.prg s_stod.prg s_stretc.prg //
- s_strpat.prg s_strpul.prg s_subplu.prg s_sumav.prg s_super.prg s_tabmen.prg s_tag.prg s_taga.prg s_tagam.prg s_tagf.prg //
- s_takeout.prg s_time.prg s_todo.prg s_trueva.prg s_unbox.prg s_uniqf.prg s_unsel.prg s_var2.prg s_varlen.prg s_viewp.prg //
- s_vmemo.prg s_vview.prg s_wild.prg s_womon.prg s_woyear.prg s_writef.prg s_xbxx.prg $(PS) 
+ s_fillar.prg s_fm2n.prg s_fm2p.prg s_forml.prg s_freadl.prg s_freq.prg s_fulld.prg s_gened.prg s_genva.prg s_getcal.prg //
+ s_getdat.prg s_getdfp.prg s_getkey.prg s_getman.prg s_globr.prg s_hardc.prg s_help.prg s_helpm.prg s_hplas.prg s_init.prg //
+ s_inlook.prg s_isload.prg s_ispart.prg s_isvalf.prg s_kbdesc.prg s_list.prg s_ljust.prg s_lotmen.prg s_mailm.prg s_makeb.prg //
+ s_mchoi.prg s_meas.prg s_menuv.prg s_messyn.prg s_mfld.prg s_mfldt.prg s_modify.prg s_moose.prg s_msg.prg s_mulmyn.prg //
+ s_nbr2st.prg s_nkey.prg s_notdup.prg s_nozdiv.prg s_oner.prg s_openin.prg s_pcsel.prg s_picknd.prg s_plsw.prg s_popdir.prg //
+ s_popex.prg s_popord.prg s_popr.prg s_popupk.prg s_popvw.prg s_pread.prg s_prnpor.prg s_prnt.prg s_prntf.prg s_prog.prg //
+ s_proper.prg s_pseek.prg s_pulldn.prg s_purgem.prg s_query.prg s_readrs.prg s_rjust.prg s_rmenu2.prg s_rread.prg s_saddr.prg //
+ s_scmod.prg s_screen.prg s_scroll.prg s_search.prg s_setcen.prg s_setcol.prg s_setdat.prg s_setex.prg s_setkey.prg s_sfilok.prg //
+ s_smal.prg s_smalk.prg s_smgets.prg s_snetu.prg s_sreclo.prg s_stan.prg s_starts.prg s_stod.prg s_stretc.prg s_strpat.prg //
+ s_strpul.prg s_subplu.prg s_sumav.prg s_super.prg s_tabmen.prg s_tag.prg s_taga.prg s_tagam.prg s_tagf.prg s_takeout.prg //
+ s_time.prg s_todo.prg s_trueva.prg s_unbox.prg s_uniqf.prg s_unsel.prg s_var2.prg s_varlen.prg s_viewp.prg s_vmemo.prg //
+ s_vview.prg s_wild.prg s_womon.prg s_woyear.prg s_writef.prg s_xbxx.prg $(PS) 
 RESFILES =
 RESDEPEN = $(RESFILES)
 DEFFILE = 
