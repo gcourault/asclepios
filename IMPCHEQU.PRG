@@ -303,7 +303,7 @@ do case
 		"Cheque N§","Importe",;
 		"N§ Factura","Fecha de Hoy","N§ Prestador"}
 		aTipo := {"C","C","C","C","C","C","N","C","C","C"}
-		formletr(aCampos,aDescr,aTipo)
+		formletrpdf(aCampos,aDescr,aTipo)
 	case mselecc == 2
 		aCampos := {"B->PRNOMB","B->PRDIRE",;
 		"B->PRLOCA","B->PRPCIA",;
@@ -316,7 +316,7 @@ do case
 		"Cheque N§","Importe",;
 		"N§ Factura","Fecha de Hoy","N§ Prestador"}
 		aTipo := {"C","C","C","C","C","C","N","C","C","C"}
-		formletr(aCampos,aDescr,aTipo)
+		formletrpdf(aCampos,aDescr,aTipo)
 	otherwise
 		close all
 		return NIL
