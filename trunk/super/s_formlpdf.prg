@@ -9,7 +9,7 @@ static aTagged,aHelp,nUserDef
 #include "inkey.ch"
 
 
-FUNCTION formletr(aInField,aInfdescr,aInftype,aInUexpress,aInUdescrip,aInUkeys)
+FUNCTION formletrpdf(aInField,aInfdescr,aInftype,aInUexpress,aInUdescrip,aInUkeys)
 
 
 LOCAL nFieldCount,cCurrFormDes,nMainSelect
@@ -375,7 +375,7 @@ return .f.
 */
 
 *============================================================
-FUNCTION sffl_f_l_u(nMode, nLine, nColumn)
+static FUNCTION sffl_f_l_u(nMode, nLine, nColumn)
 
 local nMassage
 local nReturnVal, nLastkey, nFieldNumber, cYesNo, cFieldBox
@@ -501,8 +501,9 @@ DO WHILE .T.
   IF cDestination == "IMPRESORA"
        cOutFileName := uniqfname("pdf")  
        pdfOpen( cOutFileName , 200 , .t. )
-    endif
+    
   ELSE
+
     cOutFile := "FORMLETR.PDF"
     popread(.F.,"Imprimir a Archivo:",@cOutFile,"@K")
     cOutFile := Alltrim(cOutFile)
@@ -596,16 +597,16 @@ DO WHILE .T.
         @11,35 say "               "
         @12,35 say "Imprimiendo ..."
         SET CONSOLE OFF
-          * IF cDestination == "IMPRESORA"
+          IF cDestination == "IMPRESORA"
           * SET PRINT ON
           * ? cReview
           * SET PRINT OFF
           * SET PRINTER TO
           * SET PRINTER TO (sls_prn())
-          pdfText( cReview , 0 , 0 , 175 , 0 ,)
+          pdfText( cReview , 0 , 0 , 175 , 0 )
         * ELSE
           * FWRITE(nOutHandle,cReview+chr(13)+chr(10))
-        * ENDIF
+        ENDIF
         SET CONSOLE ON
         @12,35 say "             "
         @11,35 say "Buscando ... "
@@ -623,7 +624,7 @@ DO WHILE .T.
       endif
   ENDDO
   unbox(cLookingBox)
-  IF cDestination == "IMPRESORA"
+  *IF cDestination == "IMPRESORA"
     * SET PRINT OFF
     * SET PRINTER TO
     * SET PRINTER TO (sls_prn())
