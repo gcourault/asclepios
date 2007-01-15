@@ -449,11 +449,13 @@ IF !(nMode= ME_INIT)
     
     nReturnVal = ME_IGNORE
     
-  CASE nUserDef > 0
+  /*
+   CASE nUserDef > 0
     if ascan(aUkeys,nLastkey) > 0
         KEYBOARD CHR(174) + TRIM(aUexpress[ascan(aUkeys,nLastkey)]) + ;
           CHR(175)
     endif
+ */
   ENDCASE
   
 ENDIF
