@@ -516,7 +516,7 @@ DO WHILE .T.
     pdfOpen( cOutFileName , 200 , .t. )
   ENDIF
 
-  pdfSetFont("Times" , 0 , 10 )
+  pdfSetFont("Times" , 0 , 12 )
 
   popread(.F.,"Margen Izquierdo ",@nLeftMargin,"99","Margen Superior  ",@nTopMargin,"99")
   IF LASTKEY()=27
@@ -605,7 +605,7 @@ DO WHILE .T.
           * SET PRINT OFF
           * SET PRINTER TO
           * SET PRINTER TO (sls_prn())
-           pdfText( cReview , 0 , 0 , 175 , 0 , 4 , "M" , "" , .t. )
+           pdfText( hb_oemtoansi( cReview ), 20 , 10 , 190 ,  0 , 1 , "M" )
 
            * pdfAtSay("Hola que tal" , 10 ,10 , "M" )
         * ELSE

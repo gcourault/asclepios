@@ -1331,7 +1331,7 @@ DEFAULT cColor to ""
 
    nNew := nTab
 
-   cString := alltrim( cString )
+   * cString := alltrim( cString )
    nTokens := numtoken( cString, cDelim )
    nTokenLen := 0.00
    nStart := 1
