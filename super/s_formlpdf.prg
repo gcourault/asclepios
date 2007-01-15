@@ -449,11 +449,13 @@ IF !(nMode= ME_INIT)
     
     nReturnVal = ME_IGNORE
     
-  CASE nUserDef > 0
+   /*
+   CASE nUserDef != NIL
     if ascan(aUkeys,nLastkey) > 0
         KEYBOARD CHR(174) + TRIM(aUexpress[ascan(aUkeys,nLastkey)]) + ;
           CHR(175)
     endif
+    */
   ENDCASE
   
 ENDIF
@@ -634,6 +636,8 @@ DO WHILE .T.
     * FCLOSE(nOutHandle)
   * ENDIF
   * ERASE (getdfp()+cAltFile)
+    pdfclose()
+
        cComandoImpresion :=  "c:\archiv~1\ghostgum\gsview\gsprint -query " + cOutFileName + "> NUL"
        run &cComandoImpresion
 
