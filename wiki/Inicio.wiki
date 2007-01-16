@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Descripción de asclepios
 
 = Introducción =
 
@@ -16,5 +16,4 @@ Funciona sobre MS-Windows y GNU/Linux (pronto el ejecutable)
   * Prácticas ambulatorias
   * Reintegros
   * Generación automática de cheques de pago y notas de elevación
-
 
