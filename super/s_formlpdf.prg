@@ -396,14 +396,14 @@ IF !(nMode= ME_INIT)
 
   CASE nLastkey =K_F1
     
-    mchoice(aHelp,2,5,23,75,"[Help:]")
+    mchoice(aHelp,2,5,23,75,"[Ayuda:]")
 
   CASE nLastkey = K_F10
     if messyn("¨Graba los cambios y sale?","Grabar y Salir","No Salir")
        keyboard chr(23)
     endif
   CASE nLastkey = K_ESC
-    if !messyn("Exit without saving?")
+    if !messyn("¨Sale sin grabar?")
        nReturnVal = ME_IGNORE
     endif
 
@@ -601,13 +601,28 @@ DO WHILE .T.
         SET CONSOLE OFF
           IF cDestination == "IMPRESORA"
           * SET PRINT ON
-          * ? cReview
-          * SET PRINT OFF
-          * SET PRINTER TO
-          * SET PRINTER TO (sls_prn())
-           pdfText( hb_oemtoansi( cReview ), 20 , 10 , 190 ,  0 , 1 , "M" )
+          cSalida := uniqfname("PRN")
+          set printer to ( getdfp() + cSalida )
+          set printer on
+          ? cReview
+          SET PRINT OFF
+          SET PRINTER TO
+          
+          * pdfText( hb_oemtoansi( cReview ), 20 , 10 , 190 ,  1 , 1 , "M" )
+          nHandle := fopen( getdfp() + cSalida ) 
+          cTexto := sfreadline( nHandle )
+          pdfAtSay( hb_oemtoansi( cTexto ) , 15 , 20 , "M"  )
+          nRenglon := pdfNewLine( 1 )
+          while fmove2next( nHandle )
+             cTexto := sfreadline( nHandle )
+             pdfAtSay( hb_oemtoansi( cTexto ), 15 + pdfR2M( nRenglon ) , 20 , "M" ) 
+             nRenglon := pdfNewLine( 1 )
+          end
 
-           * pdfAtSay("Hola que tal" , 10 ,10 , "M" )
+          erase( getdfp() + cSalida )
+          
+
+ 
         * ELSE
           * FWRITE(nOutHandle,cReview+chr(13)+chr(10))
         ENDIF
@@ -681,4 +696,5 @@ aHelp[17+nUserDef+2] := "  "
 aHelp[17+nUserDef+3] := "  ........pulse una tecla"
 return aHelp
 
-
+static function pdfR2M( nRow )                                                
+return 25.4 * nRow / 6 
