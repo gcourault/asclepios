@@ -1,4 +1,3 @@
-# include "mediator.ch"
 FUNCTION popex(cSkeleton,cTitle)
 local cReturn,nMatches,nTop,nBottom,nPopSize,nSelection,cSkelPath,cUnder
 local nOldCursor,aPopDir,nCount
